@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="杨宝荣（Baorong Yang），天津师范大学智能科学与技术硕士研究生。申请 2027 年入学的 AI 系统或智能软件工程博士。研究车联网资源分配，开发昇腾算子与 KitAgent。">
+  <meta name="description" content="杨宝荣（Baorong Yang），天津师范大学智能科学与技术硕士研究生。研究车联网中的功率与频谱分配，关注 Coding Agent 的执行可靠性。学术论文、KitAgent 与昇腾算子开源工作。">
   <link rel="canonical" href="https://zed123214.github.io/">
   <link rel="stylesheet" href="style.css">
   <title>杨宝荣 · Baorong Yang | 学术主页</title>
@@ -15,12 +15,12 @@
     <section class="intro" aria-labelledby="name">
       <div class="identity">
         <h1 id="name">杨宝荣 <span lang="en">Baorong Yang</span></h1>
-        <p class="affiliation">天津师范大学 · <span class="program">智能科学与技术硕士研究生</span></p>
+        <p class="affiliation">天津师范大学<span class="separator" aria-hidden="true"> · </span><span class="program">智能科学与技术硕士研究生</span></p>
       </div>
       <img class="portrait" src="portrait.webp" alt="杨宝荣的户外近照" width="480" height="552" fetchpriority="high">
       <div class="about">
-        <p class="intent">申请 2027 年入学的博士项目，方向为 <strong>AI 系统与智能软件工程</strong>。</p>
-        <p>硕士阶段研究车联网功率与频谱分配。现在关注 Coding Agent 的执行可靠性：如何用测试反馈定位错误，并在同一基线上验证代码修改的精度与性能。</p>
+        <p>我研究车联网中的无线资源分配。当双向车载链路与蜂窝上行链路共享频谱时，我关心怎样选择复用链路、分配发射功率，同时满足通信可靠性要求。</p>
+        <p>近期也关注 Coding Agent 的执行可靠性。我开发了 KitAgent，用 Equal 算子演示如何根据测试结果检查代码修改，并比较修改前后的性能。</p>
         <div class="links contact"><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a></div>
       </div>
     </section>
@@ -40,24 +40,24 @@
           <p class="venue">第一作者 · 在审</p>
           <p class="contribution">在上述资源分配模型的基础上，研究如何在可靠性约束下加快候选配对评估。</p>
         </article>
-        <article>
+        <article class="collaboration">
           <h3 lang="en">Performance Analysis of RIS-Assisted Two-Way Communication in Rician Fading Channels</h3>
           <p class="authors">Wenrui Yang, <strong>Baorong Yang</strong>, Liang Han</p>
           <p class="venue"><cite>ICCEAI 2025</cite> · 第二作者 · <a href="https://icceai.cn/2025/Program.pdf">官方会议日程</a></p>
         </article>
-        <article>
+        <article class="collaboration">
           <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
           <p class="venue"><cite>Optics &amp; Laser Technology</cite> 180, 111467 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.optlastec.2024.111467">DOI</a></p>
           <p class="contribution">参与数值仿真与软件实现，研究反射屏几何结构对太赫兹喷流形状的影响。</p>
         </article>
-        <article>
+        <article class="collaboration">
           <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
           <p class="venue"><cite>Measurement</cite> 239, 115530 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.measurement.2024.115530">DOI</a></p>
           <p class="contribution">参与软件实现与定量分析，考察光子喷流特征随折射率变化的规律。</p>
         </article>
-        <article>
+        <article class="collaboration">
           <h3 lang="en">DPGNN: Direction-Prior-Guided Graph Neural Networks for QoS-Constrained Power Control in Interference Networks</h3>
           <p class="authors">Tingting Lu, Xiaodong Wang, <strong>Baorong Yang</strong>, Liang Han</p>
           <p class="venue">第三作者 · 在审</p>
@@ -69,8 +69,12 @@
       <div class="label"><h2 id="eng-title">开源项目</h2><p>系统实现与评测</p></div>
       <div class="entries compact">
         <article><h3>KitAgent · 算子开发工作台</h3>
-          <p>用 Python 和 asyncio 开发 Coding Agent 运行时。在 Equal 离线演示中，脚本化模型响应驱动工具实际执行，工作台记录代码差异、精度对照和配对测速结果。</p>
-          <p>在 Graph + SQLite + Local 模式下，重启后可接续检查点，复用已记录的工具结果，并暂停重放执行结果未知的调用。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
+          <p>我用 Python 和 asyncio 开发了 KitAgent。在工作台上可以查看每轮代码差异、逐项测试结果，以及基线和候选实现在同一组输入上的耗时。</p>
+          <figure class="run-report">
+            <a href="https://github.com/zed123214/kitagent/blob/main/docs/assets/equal-operator-overview.png"><img src="equal-report.png" width="800" height="360" loading="lazy" alt="查看完整工作台截图。报告列出等长输入和标量广播的基线耗时、优化后耗时及测量条件。"></a>
+            <figcaption>Equal 离线演示。模型响应由脚本驱动，工具在本地执行。Python CPU 原型通过 75 组正确性测试，表中比较三组输入的中位耗时。</figcaption>
+          </figure>
+          <p>在 Graph + SQLite + Local 模式下，进程重启后会复用已记录的工具结果。上次执行结果未知的调用会暂停，避免重复执行。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
         </article>
         <article><h3>昇腾 CANN · Equal 算子</h3>
@@ -115,7 +119,7 @@
       <div class="label"><h2 id="awards-title">算子竞赛</h2></div>
       <div class="entries compact">
         <article><h3>中国电信「星辰杯」· 决赛 16 强，优秀奖</h3>
-          <p>与队友优化稀疏注意力反向算子 SparseFlashAttentionGrad，按查询计算量和梯度归约工作量重新分配任务。在昇腾 910B3 五分片实验中，相对初版分片方案，正序、反序两轮配对测速耗时分别降低 7.56% 和 5.67%。</p>
+          <p>我和队友优化稀疏注意力反向算子 SparseFlashAttentionGrad。五分片初稿中，处理行数较少的核承担了额外的梯度归约，反而最晚完成。我们据此重新分配归约任务。在昇腾 910B3 上与同轮连续 C1 基线配对测速，正序耗时从 280.17 降至 258.99 μs，反序从 275.31 降至 259.71 μs，分别降低 7.56% 和 5.67%。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#operator-demo">实现与测速记录</a></div>
         </article>
         <article><h3>2026 CANN 挑战赛 · 决赛三等奖</h3>
