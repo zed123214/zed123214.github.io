@@ -13,7 +13,7 @@
   <a class="skip" href="#research">跳至研究工作</a>
   <header class="mast">
     <a href="#top" class="wordmark">杨宝荣 <span>／ 学术主页</span></a>
-    <nav aria-label="主导航"><a href="#research">一作研究</a><a href="#engineering">开源项目</a><a href="#publications">合作论文</a><a href="#education">教育与荣誉</a></nav>
+    <nav aria-label="主导航"><a href="#research">一作研究</a><a href="#engineering">开源项目</a><a href="#publications">合作论文</a><a href="#experience">研发实习</a><a href="#service">审稿服务</a></nav>
   </header>
   <main>
     <section class="intro" aria-labelledby="name">
@@ -53,7 +53,7 @@
       <div class="entries compact">
         <article><h3>KitAgent · 算子开发工作台</h3>
           <p>我用 Python 和 asyncio 开发了 Coding Agent 运行时。以 Equal 为例，工作台记录代码差异，将候选输出与参考结果逐项比较，再对基线和候选实现做配对测速。离线演示采用脚本化模型响应，工具在本地实际执行。</p>
-          <p>在 Graph + SQLite + Local 模式下，工作台保存检查点、审批状态和工具结果，实验中断后可以接续。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
+          <p>在 Graph + SQLite + Local 模式下，运行时保存检查点、审批状态和工具结果。重启后复用已记录的结果。如果一次工具调用的执行结果未知，则暂停自动重放，避免重复执行。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
         </article>
         <article><h3>昇腾 CANN · Equal 算子</h3>
@@ -80,12 +80,14 @@
           <p class="venue"><cite>Optics &amp; Laser Technology</cite> · 2025 · 第二作者</p>
           <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
+          <p>参与数值仿真与软件实现，研究反射屏几何结构对太赫兹喷流形状的影响。</p>
           <div class="links"><a href="https://doi.org/10.1016/j.optlastec.2024.111467">论文 DOI</a><span>Vol. 180 · 111467</span></div>
         </article>
         <article>
           <p class="venue"><cite>Measurement</cite> · 2025 · 第二作者</p>
           <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
+          <p>参与软件实现与定量分析，考察光子喷流特征随折射率变化的规律。</p>
           <div class="links"><a href="https://doi.org/10.1016/j.measurement.2024.115530">论文 DOI</a><span>Vol. 239 · 115530</span></div>
         </article>
         <article>
@@ -97,9 +99,20 @@
       </div>
     </section>
 
-    <section class="section" id="service" aria-labelledby="service-title">
-      <div class="label"><h2 id="service-title">学术服务</h2></div>
-      <div class="entries"><p><cite lang="en">Vehicular Communications</cite> · 期刊审稿邀请（2026）</p></div>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="label"><h2 id="experience-title">研发实习</h2></div>
+      <div class="entries compact">
+        <article>
+          <div class="degree"><h3>北京能源集团</h3><span>2026.05 – 2026.08</span></div>
+          <p class="venue">AI 研发实习生</p>
+          <p>为财务问答系统实现多 Agent 协作与会话管理，用 100 组多轮会话回放比较两种历史输入策略。与拼接完整历史相比，历史摘要加近期消息使回答阶段的平均单轮输入 token 数减少 35%。</p>
+        </article>
+        <article>
+          <div class="degree"><h3>中国汽车技术研究中心</h3><span>2025.11 – 2026.04</span></div>
+          <p class="venue">后端开发实习生</p>
+          <p>为汽车技术文档问答实现关键词与向量混合检索，依据标注证据评估检索效果。在 150 条离线问答上，经检索调优，前五条结果的证据召回率（Recall@5）从 54% 提高到 95% 以上。</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="education" aria-labelledby="edu-title">
@@ -126,6 +139,15 @@
           <p>为视频生成实现变长三维旋转位置编码算子 VarLenNdRotaryPosEmb，在不同注意力头之间复用旋转系数。69 组回归输入的输出均通过与 PyTorch 参考实现的容差校验。</p>
         </article>
       </div>
+    </section>
+    <section class="section" id="service" aria-labelledby="service-title">
+      <div class="label"><h2 id="service-title">审稿服务</h2></div>
+      <dl class="reviewing">
+        <dt>期刊审稿人</dt>
+        <dd><cite lang="en">Vehicular Communications</cite>、<cite lang="en">Physical Communication</cite>、<cite lang="en">Measurement</cite>、<cite lang="en">Optics &amp; Laser Technology</cite></dd>
+        <dt>会议审稿人</dt>
+        <dd lang="en">ICCEAI</dd>
+      </dl>
     </section>
   </main>
   <footer><a href="#top">回到页首</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></footer>
