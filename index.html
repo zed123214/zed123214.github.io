@@ -67,24 +67,11 @@
 
     <section class="section" id="engineering" aria-labelledby="eng-title">
       <div class="label"><h2 id="eng-title">开源项目</h2></div>
-      <div class="entries compact">
-        <article><h3>KitAgent · 算子开发工作台</h3>
-          <p>KitAgent 记录每轮算子修改，用相同输入检查输出是否正确，并比较修改前后的耗时。</p>
-          <figure class="run-report">
-            <a href="https://github.com/zed123214/kitagent/blob/main/docs/assets/equal-operator-overview.png"><img src="equal-report.png" width="800" height="360" loading="lazy" alt="查看完整工作台截图。报告列出等长输入和标量广播的基线耗时、优化后耗时及测量条件。"></a>
-            <figcaption>Equal 离线演示使用脚本化模型响应，在本地运行 Python CPU 原型。75 组测试全部通过，表中给出三组输入的中位耗时。</figcaption>
-          </figure>
-          <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
-        </article>
-        <article><h3>昇腾 CANN · Equal 算子</h3>
-          <p>用 Ascend C 实现张量的逐元素相等比较，支持 1–8 维广播。代码已合入 CANN 的 ops-math 仓库。</p>
-          <div class="links"><a href="https://gitcode.com/cann/ops-math/pull/5425">合入记录 · PR #5425</a></div>
-        </article>
-        <article><h3>SkillGrow · 财报抽取评测</h3>
-          <p>财报里的金额可能抽对了，年份却配错了。SkillGrow 把抽取字段与原表逐项对照，修订规则后重测出错的样例，也检查原先通过的样例。</p>
-          <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
-        </article>
-      </div>
+      <ul class="projects">
+        <li><a href="https://github.com/zed123214/kitagent">KitAgent</a> · 面向算子开发的 Coding Agent 工作台，可测试代码修改并比较耗时。</li>
+        <li><a href="https://gitcode.com/cann/ops-math/pull/5425">CANN Equal</a> · 支持 1–8 维广播的张量相等比较算子，已合入昇腾 CANN。</li>
+        <li><a href="https://github.com/zed123214/SkillGrow">SkillGrow</a> · 财报字段抽取评测工具，可对照原表核验结果、回放错例。</li>
+      </ul>
     </section>
 
     <section class="section" id="education" aria-labelledby="edu-title">

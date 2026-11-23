@@ -71,10 +71,8 @@ footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
 .bibliography .collaboration h3 { font-size: 1.09rem; font-weight: 500; line-height: 1.35; }
 .bibliography .collaboration .authors { margin-top: .08rem; font-size: .98rem; }
 .collaboration + .collaboration { margin-top: .7rem; }
-.run-report { max-width: 43rem; margin: 1rem 0; }
-.run-report a, .run-report img { display: block; }
-.run-report img { width: 100%; height: auto; border: 1px solid var(--rule); }
-.run-report figcaption { margin-top: .35rem; font-size: .9rem; line-height: 1.5; color: var(--muted); }
+.projects { list-style: none; margin: 0; padding: 0; color: var(--copy); }
+.projects li + li { margin-top: .45rem; }
 @media (max-width: 46rem) {
   main, footer { width: min(100% - 2.1rem, 40rem); }
   .intro { grid-template-areas: "name photo" "about about"; column-gap: .8rem; padding-block: 1.1rem; align-items: center; }
@@ -110,7 +108,6 @@ footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
   article p, .about, .contact, .links, .venue { margin: 2pt 0 0; }
   .entries article + article { margin-top: 5pt; }
   .bibliography h3, .bibliography .collaboration h3 { font-size: 11pt; }
-  .run-report { display: none; }
   .bibliography .contribution { font-size: 10pt; }
   .compact article + article, .education article + article { padding-top: 4pt; }
 
