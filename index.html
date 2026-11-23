@@ -37,7 +37,7 @@
           <h3 lang="en">Joint power and spectrum allocation for bidirectional full-duplex V2V communications underlaying cellular V2I uplinks</h3>
           <p class="authors"><strong>Baorong Yang</strong>, Tingting Lu, Liang Han</p>
           <p class="venue"><cite>Physical Communication</cite> 80, 103403 (2026) · 第一作者 · 已发表 · <a href="https://doi.org/10.1016/j.phycom.2026.103403">DOI</a></p>
-          <p class="contribution">从双向通信的可靠性要求推导发射功率上界，再用最大权匹配决定哪些车对与蜂窝用户共享频谱。</p>
+          <p class="contribution">由双向链路的可靠性约束推导功率上界，用最大权匹配分配频谱。</p>
           </div>
           <figure class="matching-result">
             <figcaption>500 个网络快照中的完整匹配率</figcaption>
@@ -49,7 +49,7 @@
           <h3 lang="en">Constraint-aware deep unfolding for power control and spectrum reuse in full-duplex vehicular networks</h3>
           <p class="authors"><strong>Baorong Yang</strong>, Liang Han</p>
           <p class="venue">第一作者 · 已投稿</p>
-          <p class="contribution">用 PyTorch 将逐对迭代的功率更新展开为固定层数的网络，预测候选链路的发射功率，并在频谱匹配前检查可行性。</p>
+          <p class="contribution">将迭代功率更新展开为可训练网络，预测发射功率并筛选可行链路。</p>
         </article>
         <article class="collaboration">
           <h3 lang="en">Performance Analysis of RIS-Assisted Two-Way Communication in Rician Fading Channels</h3>
@@ -60,13 +60,13 @@
           <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
           <p class="venue"><cite>Optics &amp; Laser Technology</cite> 180, 111467 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.optlastec.2024.111467">DOI</a></p>
-          <p class="contribution">参与数值仿真与软件实现，研究反射屏几何结构对太赫兹喷流形状的影响。</p>
+          <p class="contribution">参与数值仿真，分析反射屏几何结构如何改变太赫兹喷流形状。</p>
         </article>
         <article class="collaboration">
           <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
           <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
           <p class="venue"><cite>Measurement</cite> 239, 115530 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.measurement.2024.115530">DOI</a></p>
-          <p class="contribution">参与软件实现与定量分析，考察光子喷流特征随折射率变化的规律。</p>
+          <p class="contribution">参与仿真与数据分析，考察折射率对焦距和峰值强度的影响。</p>
         </article>
         <article class="collaboration">
           <h3 lang="en">DPGNN: Direction-Prior-Guided Graph Neural Networks for QoS-Constrained Power Control in Interference Networks</h3>
@@ -93,11 +93,11 @@
       <div class="label"><h2 id="awards-title">算子竞赛</h2></div>
       <div class="entries compact">
         <article><h3>中国电信「星辰杯」· 决赛 16 强，优秀奖</h3>
-          <p>优化 SparseFlashAttentionGrad 时，我们发现行数较少的核因承担额外的梯度归约，最晚完成计算。重新分配归约任务后，在昇腾 910B3 五分片实验中，相对同轮连续 C1 基线，正序和反序配对测速的耗时分别降低 7.56% 和 5.67%。</p>
+          <p>重新分配 SparseFlashAttentionGrad 的梯度归约任务，在昇腾 910B3 五分片实验中，相比同轮连续 C1 基线，正序、反序配对测速耗时分别降低 7.56% 和 5.67%。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#operator-demo">实现与测速记录</a></div>
         </article>
-        <article><h3>2026 CANN 挑战赛 · 京津东北赛区决赛团队三等奖</h3>
-          <p>为视频生成实现变长三维旋转位置编码算子 VarLenNdRotaryPosEmb，在不同注意力头之间复用旋转系数。69 组回归输入的输出均通过与 PyTorch 参考实现的容差校验。</p>
+        <article><h3>2026 CANN 挑战赛 决赛三等奖</h3>
+          <p>为视频生成实现变长三维旋转位置编码算子，69 组用例全部通过 PyTorch 参考实现的容差校验。</p>
         </article>
       </div>
     </section>
@@ -109,9 +109,9 @@
     <section class="section" id="engineering" aria-labelledby="eng-title">
       <div class="label"><h2 id="eng-title">开源项目</h2></div>
       <ul class="projects">
-        <li><a href="https://github.com/zed123214/kitagent">KitAgent</a> · 面向算子开发的 Coding Agent 工作台，可测试代码修改并比较耗时。</li>
-        <li><a href="https://gitcode.com/cann/ops-math/pull/5425">CANN Equal</a> · 支持 1–8 维广播的张量相等比较算子，已合入昇腾 CANN。</li>
-        <li><a href="https://github.com/zed123214/SkillGrow">SkillGrow</a> · 财报字段抽取评测工具，可对照原表核验结果、回放错例。</li>
+        <li><a href="https://github.com/zed123214/kitagent">KitAgent</a> · 用于算子开发、正确性测试和性能对比的 Coding Agent。</li>
+        <li><a href="https://gitcode.com/cann/ops-math/pull/5425">CANN Equal</a> · 张量相等比较算子，支持 1–8 维广播，已合入昇腾 CANN。</li>
+        <li><a href="https://github.com/zed123214/SkillGrow">SkillGrow</a> · 财报字段抽取评测工具，支持原文核验与错例回放。</li>
       </ul>
     </section>
   </main>
