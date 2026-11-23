@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbfcfa">
-  <meta name="description" content="杨宝荣（Baorong Yang），天津师范大学智能科学与技术硕士研究生。研究车联网功率与频谱分配、约束感知深度展开，开发昇腾算子与 KitAgent。">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="杨宝荣（Baorong Yang），天津师范大学智能科学与技术硕士研究生。申请 2027 年入学的 AI 系统或智能软件工程博士。研究车联网资源分配，开发昇腾算子与 KitAgent。">
   <link rel="canonical" href="https://zed123214.github.io/">
   <link rel="stylesheet" href="style.css">
   <title>杨宝荣 · Baorong Yang | 学术主页</title>
@@ -12,19 +12,25 @@
 <body id="top">
   <a class="skip" href="#research">跳至研究工作</a>
   <header class="mast">
-    <a href="#top" class="wordmark" lang="en">Baorong Yang</a>
-    <nav aria-label="主导航"><a href="#research">研究工作</a><a href="#publications">合作论文</a><a href="#engineering">开源工程</a><a href="#awards">竞赛</a></nav>
+    <a href="#top" class="wordmark">杨宝荣 <span>／ 学术主页</span></a>
+    <nav aria-label="主导航"><a href="#research">一作研究</a><a href="#engineering">开源项目</a><a href="#publications">合作论文</a><a href="#education">教育与荣誉</a></nav>
   </header>
   <main>
     <section class="intro" aria-labelledby="name">
-      <h1 id="name">杨宝荣 <span lang="en">Baorong Yang</span></h1>
-      <p class="affiliation">天津师范大学 · 智能科学与技术硕士研究生 · 预计 2027 年 6 月毕业</p>
-      <p class="bio">我研究车联网中的功率与频谱分配，关注如何在满足链路可靠性约束的同时，降低求解成本。我也用 Ascend C 开发昇腾算子，并在 KitAgent 中把代码修改、精度验证和配对测速做成可回放的实验。</p>
-      <div class="links"><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a><a href="https://github.com/zed123214/kitagent#demo">KitAgent 演示</a><a href="https://gitcode.com/cann/ops-math/pull/5425">CANN 合入 PR</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></div>
+      <div class="identity">
+        <h1 id="name">杨宝荣 <span lang="en">Baorong Yang</span></h1>
+        <p class="affiliation">天津师范大学 · <span class="program">智能科学与技术硕士研究生</span></p>
+      </div>
+      <img class="portrait" src="portrait.webp" alt="杨宝荣" width="400" height="400" fetchpriority="high">
+      <div class="about">
+        <p class="intent">申请 2027 年入学的博士项目，方向为 <strong>AI 系统与智能软件工程</strong>。</p>
+        <p>我在硕士阶段研究车联网中的功率与频谱分配，也用 Ascend C 开发算子。在 KitAgent 中，我把一次算子修改与它的精度测试、性能对照关联起来。博士阶段，我希望研究 Coding Agent 怎样利用执行反馈定位错误，以及怎样验证一次修改确实改善了程序。</p>
+        <div class="links contact"><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a><button type="button" class="print" hidden>打印 / 存为 PDF</button></div>
+      </div>
     </section>
 
     <section class="section" id="research" aria-labelledby="research-title">
-      <div class="label"><h2 id="research-title">研究工作</h2><p>无线资源分配</p></div>
+      <div class="label"><h2 id="research-title">第一作者研究</h2><p>车联网资源分配</p></div>
       <div class="entries">
         <article class="paper">
           <p class="venue"><cite>Physical Communication</cite> · 2026 · 第一作者 · 已发表</p>
@@ -38,6 +44,25 @@
           <h3 lang="en">Constraint-Aware Deep Unfolding for Resource Allocation in Full-Duplex V2V Underlay Networks</h3>
           <p class="authors"><strong>Baorong Yang</strong>, Liang Han</p>
           <p>这项工作延续了前一篇论文的配对问题：当候选链路增多时，如何在满足通信可靠性要求的同时，更快地评估每种复用方案？</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="engineering" aria-labelledby="eng-title">
+      <div class="label"><h2 id="eng-title">开源项目</h2><p>系统实现与评测</p></div>
+      <div class="entries compact">
+        <article><h3>KitAgent · 算子开发工作台</h3>
+          <p>我用 Python 和 asyncio 开发了 Coding Agent 运行时。以 Equal 为例，工作台记录代码差异，将候选输出与参考结果逐项比较，再对基线和候选实现做配对测速。离线演示采用脚本化模型响应，工具在本地实际执行。</p>
+          <p>在 Graph + SQLite + Local 模式下，工作台保存检查点、审批状态和工具结果，实验中断后可以接续。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
+          <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
+        </article>
+        <article><h3>昇腾 CANN · Equal 算子</h3>
+          <p>用 Ascend C 实现逐元素比较，负责 Host 侧分块与 AICore 计算内核，支持 1–8 维广播。实现已合入 CANN 的 ops-math 仓库。</p>
+          <div class="links"><a href="https://gitcode.com/cann/ops-math/pull/5425">合入记录 · PR #5425</a></div>
+        </article>
+        <article><h3>SkillGrow · 财报抽取评测</h3>
+          <p>在字节跳动工程训练营开发。把抽取字段、原文证据和评分关联到同一用例，修改规则后在独立工作区回放失败样例和此前通过的样例。仓库提供 20 个合成回放用例。</p>
+          <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
         </article>
       </div>
     </section>
@@ -72,21 +97,20 @@
       </div>
     </section>
 
-    <section class="section" id="engineering" aria-labelledby="eng-title">
-      <div class="label"><h2 id="eng-title">开源工程</h2></div>
-      <div class="entries compact">
-        <article><h3>昇腾 CANN · Equal 算子</h3>
-          <p>用 Ascend C 实现逐元素比较，负责 Host 侧分块与 AICore 计算内核，支持 1–8 维广播。实现已合入 CANN 的 ops-math 仓库。</p>
-          <div class="links"><a href="https://gitcode.com/cann/ops-math/pull/5425">合入记录 · PR #5425</a></div>
+    <section class="section" id="service" aria-labelledby="service-title">
+      <div class="label"><h2 id="service-title">学术服务</h2></div>
+      <div class="entries"><p><cite lang="en">Vehicular Communications</cite> · 期刊审稿邀请（2026）</p></div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="label"><h2 id="edu-title">教育经历</h2></div>
+      <div class="entries education">
+        <article><div class="degree"><h3>天津师范大学</h3><span>2024.09 – 2027.06（预计）</span></div>
+          <p>智能科学与技术 · 硕士研究生</p>
+          <p class="honour">研究生一等学业奖学金（2024、2025）</p>
         </article>
-        <article><h3>KitAgent · 算子开发工作台</h3>
-          <p>Agent 改完算子，怎么知道它算对了、跑快了？Equal 离线演示用脚本化模型响应驱动实际工具执行，逐项比较候选输出与参考结果，再对基线和候选实现做配对测速。</p>
-          <p>在 Graph + SQLite + Local 模式下，工作台保存检查点、审批状态和工具结果，实验中断后可以接续。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
-          <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
-        </article>
-        <article><h3>SkillGrow · 财报抽取评测</h3>
-          <p>在字节跳动工程训练营开发。把抽取字段、原文证据和评分关联到同一用例，修改规则后在独立工作区回放失败样例和此前通过的样例。仓库提供 20 个合成回放用例。</p>
-          <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
+        <article><div class="degree"><h3>三峡大学</h3><span>2020.09 – 2024.06</span></div>
+          <p>信息与计算科学 · 本科</p>
         </article>
       </div>
     </section>
@@ -105,5 +129,10 @@
     </section>
   </main>
   <footer><a href="#top">回到页首</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></footer>
+  <script>
+    const printButton = document.querySelector(".print");
+    printButton.hidden = false;
+    printButton.addEventListener("click", () => window.print());
+  </script>
 </body>
 </html>
