@@ -43,7 +43,7 @@ h1 span { display: inline-block; margin-left: .18em; color: var(--muted); font-s
 .contact a:hover, .contact a:focus-visible { text-decoration: underline; }
 .contact img { display: block; width: 1rem; height: 1rem; object-fit: contain; }
 
-.section { display: grid; grid-template-columns: 8.2rem minmax(0,1fr); gap: 1.8rem; border-top: 1px solid var(--rule); padding: 1.55rem 0 1.65rem; }
+.section { display: grid; grid-template-columns: minmax(0,1fr); gap: .85rem; border-top: 1px solid var(--rule); padding: 1.55rem 0 1.65rem; }
 #publications { border-top: 1px solid #aab4be; }
 .label h2 { font-size: 1.43rem; line-height: 1.5; font-weight: 600; }
 .label p { margin-top: .2rem; font-size: .9rem; }
@@ -55,11 +55,12 @@ article h3 { font-weight: 600; font-size: clamp(1.25rem,2.2vw,1.62rem); line-hei
 .venue cite { font-style: normal; }
 .authors { color: var(--muted); font: 1.05rem/1.52 var(--serif); }
 
-.compact article + article, .education article + article { border-top: 1px solid #e6ebef; padding-top: 1.1rem; }
-.compact article h3, .education h3 { font-size: 1.27rem; line-height: 1.38; }
-.degree { display: flex; flex-wrap: wrap; gap: .2rem 1rem; justify-content: space-between; align-items: baseline; }
-.degree span, .honour { font-size: .94rem; color: var(--muted); }
-.education article p { margin-top: .15rem; }
+.compact article + article { border-top: 1px solid #e6ebef; padding-top: 1.1rem; }
+.compact article h3 { font-size: 1.27rem; line-height: 1.38; }
+.education { list-style: none; margin: 0; padding: 0; }
+.education li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem 1rem; color: var(--copy); }
+.education li + li { margin-top: .4rem; }
+.education li span:nth-child(n+3) { color: var(--muted); font-size: .94rem; }
 footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
 .reviewing { margin: 0; color: var(--copy); }
 
@@ -71,15 +72,12 @@ footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
 .bibliography .venue { margin: .1rem 0 0; color: var(--muted); font-weight: 400; }
 .bibliography .venue cite { font-style: italic; color: var(--ink); }
 .bibliography .contribution { font-size: .96rem; margin-top: .12rem; }
-.bibliography { grid-template-columns: minmax(0,1fr); gap: .85rem; }
 .featured-paper { display: grid; grid-template-columns: minmax(0,1fr) 14rem; align-items: center; gap: 2rem; }
-.matching-result { margin: 0; padding: .8rem 1rem; background: #f3f6fa; color: var(--copy); font-size: .86rem; }
+.matching-result { margin: 0; padding: .5rem 0 .5rem 1rem; border-left: 1px solid var(--rule); color: var(--copy); font-size: .86rem; }
 .matching-result figcaption { color: var(--ink); margin-bottom: .45rem; font-weight: 600; }
-.matching-result div { display: flex; justify-content: space-between; }
-.matching-result meter { display: block; width: 100%; height: .8rem; accent-color: var(--accent); }
-.matching-result meter::-webkit-meter-optimum-value { background: var(--accent); }
-.matching-result meter::-moz-meter-bar { background: var(--accent); }
-.matching-result meter + div { margin-top: .3rem; }
+.bar-value { display: flex; align-items: center; gap: .4rem; font-variant-numeric: tabular-nums; font-weight: 600; line-height: 1.25; }
+.bar-value::before { content: ""; width: var(--rate); border-top: .5rem solid var(--accent); }
+.matching-result div + div { margin-top: .35rem; }
 .bibliography .collaboration h3 { font-size: 1.09rem; font-weight: 500; line-height: 1.35; }
 .bibliography .collaboration .authors { margin-top: .08rem; font-size: .98rem; }
 .collaboration + .collaboration { margin-top: .7rem; }
@@ -91,7 +89,7 @@ footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
   main, footer { width: min(100% - 2.1rem, 40rem); }
   .intro { grid-template-areas: "name photo" "about about"; column-gap: .8rem; padding-block: 1.1rem; align-items: center; }
   .portrait { width: clamp(4.8rem,21vw,7rem); }
-  .section { grid-template-columns: 1fr; gap: 1rem; padding: 1.45rem 0 1.65rem; }
+  .section { gap: .85rem; padding: 1.45rem 0 1.65rem; }
   .label { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .7rem; }
   .label p { margin: 0; }
 }
@@ -117,16 +115,12 @@ footer { border-top: 1px solid var(--rule); padding-bottom: 1.6rem; }
   .label { margin-bottom: 3pt; break-after: avoid; }
   .label h2 { font-size: 12pt; line-height: 1.25; }
   .entries article { break-inside: avoid; }
-  article h3, .compact article h3, .education h3 { font-size: 11pt; line-height: 1.2; }
-  .affiliation, .about, .entries article p, .links, .degree span { font-size: 10pt; line-height: 1.32; }
+  article h3, .compact article h3 { font-size: 11pt; line-height: 1.2; }
+  .affiliation, .about, .entries article p, .links, .education li span { font-size: 10pt; line-height: 1.32; }
   article p, .about, .contact, .links, .venue { margin: 2pt 0 0; }
   .entries article + article { margin-top: 5pt; }
   .bibliography h3, .bibliography .collaboration h3 { font-size: 11pt; }
   .bibliography .contribution { font-size: 10pt; }
-  .compact article + article, .education article + article { padding-top: 4pt; }
-
-  .education { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .education article + article { margin: 0; padding: 0; border: 0; }
-  .degree { gap: 2pt 7pt; }
+  .compact article + article { padding-top: 4pt; }
   a { color: inherit; }
 }
