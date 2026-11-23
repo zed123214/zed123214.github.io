@@ -10,11 +10,7 @@
   <title>杨宝荣 · Baorong Yang | 学术主页</title>
 </head>
 <body id="top">
-  <a class="skip" href="#research">跳至研究工作</a>
-  <header class="mast">
-    <a href="#top" class="wordmark">杨宝荣 <span>／ 学术主页</span></a>
-    <nav aria-label="主导航"><a href="#research">一作研究</a><a href="#engineering">开源项目</a><a href="#publications">合作论文</a><a href="#education">教育经历</a><a href="#service">审稿服务</a></nav>
-  </header>
+  <a class="skip" href="#publications">跳至学术论文</a>
   <main>
     <section class="intro" aria-labelledby="name">
       <div class="identity">
@@ -24,26 +20,47 @@
       <img class="portrait" src="portrait.webp" alt="杨宝荣的户外近照" width="480" height="552" fetchpriority="high">
       <div class="about">
         <p class="intent">申请 2027 年入学的博士项目，方向为 <strong>AI 系统与智能软件工程</strong>。</p>
-        <p>我在硕士阶段研究车联网中的功率与频谱分配，也用 Ascend C 开发算子。在 KitAgent 中，我把一次算子修改与它的精度测试、性能对照关联起来。博士阶段，我希望研究 Coding Agent 怎样利用执行反馈定位错误，以及怎样验证一次修改确实改善了程序。</p>
-        <div class="links contact"><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a><button type="button" class="print" hidden>打印 / 存为 PDF</button></div>
+        <p>硕士阶段研究车联网功率与频谱分配。现在关注 Coding Agent 的执行可靠性：如何用测试反馈定位错误，并在同一基线上验证代码修改的精度与性能。</p>
+        <div class="links contact"><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a></div>
       </div>
     </section>
 
-    <section class="section" id="research" aria-labelledby="research-title">
-      <div class="label"><h2 id="research-title">第一作者研究</h2><p>车联网资源分配</p></div>
+    <section class="section bibliography" id="publications" aria-labelledby="pub-title">
+      <div class="label" id="research"><h2 id="pub-title">学术论文</h2></div>
       <div class="entries">
-        <article class="paper">
-          <p class="venue"><cite>Physical Communication</cite> · 2026 · 第一作者 · 已发表</p>
+        <article>
           <h3 lang="en">Joint power and spectrum allocation for bidirectional full-duplex V2V communications underlaying cellular V2I uplinks</h3>
           <p class="authors"><strong>Baorong Yang</strong>, Tingting Lu, Liang Han</p>
-          <p>一对车辆在同一频段双向通信时，可以复用哪条蜂窝上行链路？我们把两个方向的可靠性要求转化为显式功率上界，用交替优化估计各可行配对的容量，再通过匈牙利算法完成一对一匹配。在论文考察的准静态高速公路场景中，全双工方案的蜂窝上行总遍历容量高于半双工基线。</p>
-          <div class="links"><a href="https://doi.org/10.1016/j.phycom.2026.103403">论文 DOI</a><span>Vol. 80 · 103403</span></div>
+          <p class="venue"><cite>Physical Communication</cite> 80, 103403 (2026) · 第一作者 · 已发表 · <a href="https://doi.org/10.1016/j.phycom.2026.103403">DOI</a></p>
+          <p class="contribution">从双向链路的可靠性约束推导发射功率上界，再以可行配对的容量为权重分配频谱。</p>
         </article>
-        <article class="paper followup">
-          <p class="venue">后续工作 · 第一作者 · 在审</p>
+        <article>
           <h3 lang="en">Constraint-Aware Deep Unfolding for Resource Allocation in Full-Duplex V2V Underlay Networks</h3>
           <p class="authors"><strong>Baorong Yang</strong>, Liang Han</p>
-          <p>这项工作延续了前一篇论文的配对问题：当候选链路增多时，如何在满足通信可靠性要求的同时，更快地评估每种复用方案？</p>
+          <p class="venue">第一作者 · 在审</p>
+          <p class="contribution">在上述资源分配模型的基础上，研究如何在可靠性约束下加快候选配对评估。</p>
+        </article>
+        <article>
+          <h3 lang="en">Performance Analysis of RIS-Assisted Two-Way Communication in Rician Fading Channels</h3>
+          <p class="authors">Wenrui Yang, <strong>Baorong Yang</strong>, Liang Han</p>
+          <p class="venue"><cite>ICCEAI 2025</cite> · 第二作者 · <a href="https://icceai.cn/2025/Program.pdf">官方会议日程</a></p>
+        </article>
+        <article>
+          <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
+          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
+          <p class="venue"><cite>Optics &amp; Laser Technology</cite> 180, 111467 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.optlastec.2024.111467">DOI</a></p>
+          <p class="contribution">参与数值仿真与软件实现，研究反射屏几何结构对太赫兹喷流形状的影响。</p>
+        </article>
+        <article>
+          <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
+          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
+          <p class="venue"><cite>Measurement</cite> 239, 115530 (2025) · 第二作者 · <a href="https://doi.org/10.1016/j.measurement.2024.115530">DOI</a></p>
+          <p class="contribution">参与软件实现与定量分析，考察光子喷流特征随折射率变化的规律。</p>
+        </article>
+        <article>
+          <h3 lang="en">DPGNN: Direction-Prior-Guided Graph Neural Networks for QoS-Constrained Power Control in Interference Networks</h3>
+          <p class="authors">Tingting Lu, Xiaodong Wang, <strong>Baorong Yang</strong>, Liang Han</p>
+          <p class="venue">第三作者 · 在审</p>
         </article>
       </div>
     </section>
@@ -52,8 +69,8 @@
       <div class="label"><h2 id="eng-title">开源项目</h2><p>系统实现与评测</p></div>
       <div class="entries compact">
         <article><h3>KitAgent · 算子开发工作台</h3>
-          <p>我用 Python 和 asyncio 开发了 Coding Agent 运行时。以 Equal 为例，工作台记录代码差异，将候选输出与参考结果逐项比较，再对基线和候选实现做配对测速。离线演示采用脚本化模型响应，工具在本地实际执行。</p>
-          <p>在 Graph + SQLite + Local 模式下，运行时保存检查点、审批状态和工具结果。重启后复用已记录的结果。如果一次工具调用的执行结果未知，则暂停自动重放，避免重复执行。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
+          <p>用 Python 和 asyncio 开发 Coding Agent 运行时。在 Equal 离线演示中，脚本化模型响应驱动工具实际执行，工作台记录代码差异、精度对照和配对测速结果。</p>
+          <p>在 Graph + SQLite + Local 模式下，重启后可接续检查点，复用已记录的工具结果，并暂停重放执行结果未知的调用。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
         </article>
         <article><h3>昇腾 CANN · Equal 算子</h3>
@@ -63,38 +80,6 @@
         <article><h3>SkillGrow · 财报抽取评测</h3>
           <p>在字节跳动工程训练营开发。把抽取字段、原文证据和评分关联到同一用例，修改规则后在独立工作区回放失败样例和此前通过的样例。仓库提供 20 个合成回放用例。</p>
           <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="publications" aria-labelledby="pub-title">
-      <div class="label"><h2 id="pub-title">合作论文</h2></div>
-      <div class="entries compact">
-        <article>
-          <p class="venue">ICCEAI 2025 · 第二作者</p>
-          <h3 lang="en">Performance Analysis of RIS-Assisted Two-Way Communication in Rician Fading Channels</h3>
-          <p class="authors">Wenrui Yang, <strong>Baorong Yang</strong>, Liang Han</p>
-          <div class="links"><a href="https://icceai.cn/2025/Program.pdf">官方会议日程</a></div>
-        </article>
-        <article>
-          <p class="venue"><cite>Optics &amp; Laser Technology</cite> · 2025 · 第二作者</p>
-          <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
-          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
-          <p>参与数值仿真与软件实现，研究反射屏几何结构对太赫兹喷流形状的影响。</p>
-          <div class="links"><a href="https://doi.org/10.1016/j.optlastec.2024.111467">论文 DOI</a><span>Vol. 180 · 111467</span></div>
-        </article>
-        <article>
-          <p class="venue"><cite>Measurement</cite> · 2025 · 第二作者</p>
-          <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
-          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
-          <p>参与软件实现与定量分析，考察光子喷流特征随折射率变化的规律。</p>
-          <div class="links"><a href="https://doi.org/10.1016/j.measurement.2024.115530">论文 DOI</a><span>Vol. 239 · 115530</span></div>
-        </article>
-        <article>
-          <p class="venue">在审 · 第三作者</p>
-          <h3 lang="en">DPGNN: Direction-Prior-Guided Graph Neural Networks for QoS-Constrained Power Control in Interference Networks</h3>
-          <p class="authors">Tingting Lu, Xiaodong Wang, <strong>Baorong Yang</strong>, Liang Han</p>
-          <p>将链路间干扰的方向性引入图神经网络，在各链路的服务质量约束下联合分配发射功率。</p>
         </article>
       </div>
     </section>
@@ -140,19 +125,9 @@
     </section>
     <section class="section" id="service" aria-labelledby="service-title">
       <div class="label"><h2 id="service-title">审稿服务</h2></div>
-      <dl class="reviewing">
-        <dt>期刊审稿人</dt>
-        <dd><cite lang="en">Vehicular Communications</cite>、<cite lang="en">Physical Communication</cite>、<cite lang="en">Measurement</cite>、<cite lang="en">Optics &amp; Laser Technology</cite></dd>
-        <dt>会议审稿人</dt>
-        <dd lang="en">ICCEAI</dd>
-      </dl>
+      <p class="reviewing">期刊审稿人（节选） · <cite lang="en">Vehicular Communications</cite>、<cite lang="en">Physical Communication</cite></p>
     </section>
   </main>
-  <footer><a href="#top">回到页首</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></footer>
-  <script>
-    const printButton = document.querySelector(".print");
-    printButton.hidden = false;
-    printButton.addEventListener("click", () => window.print());
-  </script>
+  <footer><a href="#top">回到页首</a></footer>
 </body>
 </html>
