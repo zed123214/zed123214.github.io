@@ -37,10 +37,10 @@ h1 span { display: inline-block; margin-left: .18em; color: var(--muted); font-s
 .about p + p { margin-top: .4rem; }
 .authors strong { color: var(--ink); }
 .links { margin-top: .6rem; font-size: .94rem; }
-.contact { margin-top: 1rem; }
-.contact a { display: inline-flex; align-items: center; gap: .4rem; min-height: 1.75rem; text-decoration: none; }
+.contact { margin-top: 1rem; align-items: center; }
+.contact a { display: inline-grid; grid-template-columns: 1rem auto; align-items: center; column-gap: .4rem; min-height: 1.75rem; line-height: 1.4; text-decoration: none; }
 .contact a:hover, .contact a:focus-visible { text-decoration: underline; }
-.contact img { flex: none; object-fit: contain; }
+.contact img { display: block; width: 1rem; height: 1rem; object-fit: contain; }
 
 .section { display: grid; grid-template-columns: 8.2rem minmax(0,1fr); gap: 1.8rem; border-top: 1px solid var(--rule); padding: 1.55rem 0 1.65rem; }
 #publications { border-top: 1px solid #aab4be; }
@@ -53,7 +53,6 @@ article h3 { font-weight: 600; font-size: clamp(1.25rem,2.2vw,1.62rem); line-hei
 .venue { color: var(--accent); font-size: .91rem; letter-spacing: .012em; font-weight: 600; margin: 0 0 .3rem; }
 .venue cite { font-style: normal; }
 .authors { color: var(--muted); font: 1.05rem/1.52 var(--serif); }
-.links span { color: var(--muted); }
 
 .compact article + article, .education article + article { border-top: 1px solid #e6ebef; padding-top: 1.1rem; }
 .compact article h3, .education h3 { font-size: 1.27rem; line-height: 1.38; }
