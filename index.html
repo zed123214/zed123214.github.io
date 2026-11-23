@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfcfa">
+  <meta name="description" content="杨宝荣（Baorong Yang），天津师范大学智能科学与技术硕士研究生。研究车联网功率与频谱分配、约束感知深度展开，开发昇腾算子与 KitAgent。">
+  <link rel="canonical" href="https://zed123214.github.io/">
+  <link rel="stylesheet" href="style.css">
+  <title>杨宝荣 · Baorong Yang | 学术主页</title>
+</head>
+<body id="top">
+  <a class="skip" href="#research">跳至研究工作</a>
+  <header class="mast">
+    <a href="#top" class="wordmark" lang="en">Baorong Yang</a>
+    <nav aria-label="主导航"><a href="#research">研究工作</a><a href="#publications">合作论文</a><a href="#engineering">开源工程</a><a href="#awards">竞赛</a></nav>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="name">
+      <h1 id="name">杨宝荣 <span lang="en">Baorong Yang</span></h1>
+      <p class="affiliation">天津师范大学 · 智能科学与技术硕士研究生 · 预计 2027 年 6 月毕业</p>
+      <p class="bio">我研究车联网中的功率与频谱分配，关注如何在满足链路可靠性约束的同时，降低求解成本。我也用 Ascend C 开发昇腾算子，并在 KitAgent 中把代码修改、精度验证和配对测速做成可回放的实验。</p>
+      <div class="links"><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a><a href="https://github.com/zed123214/kitagent#demo">KitAgent 演示</a><a href="https://gitcode.com/cann/ops-math/pull/5425">CANN 合入 PR</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></div>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="label"><h2 id="research-title">研究工作</h2><p>无线资源分配</p></div>
+      <div class="entries">
+        <article class="paper">
+          <p class="venue"><cite>Physical Communication</cite> · 2026 · 第一作者 · 已发表</p>
+          <h3 lang="en">Joint power and spectrum allocation for bidirectional full-duplex V2V communications underlaying cellular V2I uplinks</h3>
+          <p class="authors"><strong>Baorong Yang</strong>, Tingting Lu, Liang Han</p>
+          <p>一对车辆在同一频段双向通信时，可以复用哪条蜂窝上行链路？我们把两个方向的可靠性要求转化为显式功率上界，用交替优化估计各可行配对的容量，再通过匈牙利算法完成一对一匹配。在论文考察的准静态高速公路场景中，全双工方案的蜂窝上行总遍历容量高于半双工基线。</p>
+          <div class="links"><a href="https://doi.org/10.1016/j.phycom.2026.103403">论文 DOI</a><span>Vol. 80 · 103403</span></div>
+        </article>
+        <article class="paper followup">
+          <p class="venue">后续工作 · 第一作者 · 在审</p>
+          <h3 lang="en">Constraint-Aware Deep Unfolding for Resource Allocation in Full-Duplex V2V Underlay Networks</h3>
+          <p class="authors"><strong>Baorong Yang</strong>, Liang Han</p>
+          <p>前一项工作要为每个候选配对反复求解发射功率。这项研究把功率更新展开为固定层数的网络，用解析投影约束输出，再按物理模型剔除不可行配对。在独立留出的 4,096 个交替优化可行样本上，按 4 个训练种子取均值，最终筛选前的速率约束违规率为 <strong>1.422%</strong>，投影 MLP 基线为 <strong>10.132%</strong>。</p>
+          <div class="links"><a href="https://github.com/zed123214/constraint-aware-du-fd-v2v">研究项目仓库</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="pub-title">
+      <div class="label"><h2 id="pub-title">合作论文</h2></div>
+      <div class="entries compact">
+        <article>
+          <p class="venue">ICCEAI 2025 · 第二作者</p>
+          <h3 lang="en">Performance Analysis of RIS-Assisted Two-Way Communication in Rician Fading Channels</h3>
+          <p class="authors">Wenrui Yang, <strong>Baorong Yang</strong>, Liang Han</p>
+          <div class="links"><a href="https://icceai.cn/2025/Program.pdf">官方会议日程</a></div>
+        </article>
+        <article>
+          <p class="venue"><cite>Optics &amp; Laser Technology</cite> · 2025 · 第二作者</p>
+          <h3 lang="en">A new method of Terajet shaping by hollow reflection screen</h3>
+          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, De-Long Zhang, Ning Yuan</p>
+          <div class="links"><a href="https://doi.org/10.1016/j.optlastec.2024.111467">论文 DOI</a><span>Vol. 180 · 111467</span></div>
+        </article>
+        <article>
+          <p class="venue"><cite>Measurement</cite> · 2025 · 第二作者</p>
+          <h3 lang="en">Large-range refractive index sensor based on photonic jet</h3>
+          <p class="authors">Yu-Jing Yang, <strong>Bao-Rong Yang</strong>, Meng-Qing Yuan, De-Long Zhang, Ning Yuan, Sai-Dong Xue</p>
+          <div class="links"><a href="https://doi.org/10.1016/j.measurement.2024.115530">论文 DOI</a><span>Vol. 239 · 115530</span></div>
+        </article>
+        <article>
+          <p class="venue">在审 · 第三作者</p>
+          <h3 lang="en">DPGNN: Direction-Prior-Guided Graph Neural Networks for QoS-Constrained Power Control in Interference Networks</h3>
+          <p class="authors">Tingting Lu, Xiaodong Wang, <strong>Baorong Yang</strong>, Liang Han</p>
+          <p>将链路间干扰的方向性引入图神经网络，在各链路的服务质量约束下联合分配发射功率。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="engineering" aria-labelledby="eng-title">
+      <div class="label"><h2 id="eng-title">开源工程</h2></div>
+      <div class="entries compact">
+        <article><h3>昇腾 CANN · Equal 算子</h3>
+          <p>用 Ascend C 实现逐元素比较，负责 Host 侧分块与 AICore 计算内核，支持 1–8 维广播。实现已合入 CANN 的 ops-math 仓库。</p>
+          <div class="links"><a href="https://gitcode.com/cann/ops-math/pull/5425">合入记录 · PR #5425</a></div>
+        </article>
+        <article><h3>KitAgent · 算子开发工作台</h3>
+          <p>Agent 改完算子，怎么知道它算对了、跑快了？Equal 离线演示用脚本化模型响应驱动实际工具执行，逐项比较候选输出与参考结果，再对基线和候选实现做配对测速。</p>
+          <p>在 Graph + SQLite + Local 模式下，工作台保存检查点、审批状态和工具结果，实验中断后可以接续。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
+          <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
+        </article>
+        <article><h3>SkillGrow · 财报抽取评测</h3>
+          <p>在字节跳动工程训练营开发。把抽取字段、原文证据和评分关联到同一用例，修改规则后在独立工作区回放失败样例和此前通过的样例。仓库提供 20 个合成回放用例。</p>
+          <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <div class="label"><h2 id="awards-title">算子竞赛</h2></div>
+      <div class="entries compact">
+        <article><h3>中国电信「星辰杯」· 决赛 16 强，优秀奖</h3>
+          <p>与队友优化稀疏注意力反向算子 SparseFlashAttentionGrad，按查询计算量和梯度归约工作量重新分配任务。在昇腾 910B3 五分片实验中，相对初版分片方案，正序、反序两轮配对测速耗时分别降低 7.56% 和 5.67%。</p>
+          <div class="links"><a href="https://github.com/zed123214/kitagent#operator-demo">实现与测速记录</a></div>
+        </article>
+        <article><h3>2026 CANN 挑战赛 · 决赛三等奖</h3>
+          <p>为视频生成实现变长三维旋转位置编码算子 VarLenNdRotaryPosEmb，在不同注意力头之间复用旋转系数。69 组回归输入的输出均通过与 PyTorch 参考实现的容差校验。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer><a href="#top">回到页首</a><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a></footer>
+</body>
+</html>
