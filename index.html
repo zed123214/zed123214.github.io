@@ -19,8 +19,8 @@
       </div>
       <img class="portrait" src="portrait.webp" alt="杨宝荣的户外近照" width="480" height="552" fetchpriority="high">
       <div class="about">
-        <p>我研究车联网中的无线资源分配。当双向车载链路与蜂窝上行链路共享频谱时，我关心怎样选择复用链路、分配发射功率，同时满足通信可靠性要求。</p>
-        <p>近期也关注 Coding Agent 的执行可靠性。我开发了 KitAgent，用 Equal 算子演示如何根据测试结果检查代码修改，并比较修改前后的性能。</p>
+        <p>我研究车联网中的功率与频谱分配，关注车载链路与蜂窝上行链路共享频谱时，如何在满足通信可靠性要求的同时提高上行容量。</p>
+        <p>近期也关注 Coding Agent 如何利用测试反馈验证代码修改，以及如何在工具调用中断后恢复执行。</p>
         <div class="links contact"><a href="mailto:yangbaorong78@gmail.com">yangbaorong78@gmail.com</a><a href="https://scholar.google.com/citations?user=WuxKoZIAAAAJ&amp;hl=zh-CN">Google Scholar</a><a href="https://github.com/zed123214">GitHub</a></div>
       </div>
     </section>
@@ -66,23 +66,22 @@
     </section>
 
     <section class="section" id="engineering" aria-labelledby="eng-title">
-      <div class="label"><h2 id="eng-title">开源项目</h2><p>系统实现与评测</p></div>
+      <div class="label"><h2 id="eng-title">开源项目</h2></div>
       <div class="entries compact">
         <article><h3>KitAgent · 算子开发工作台</h3>
-          <p>我用 Python 和 asyncio 开发了 KitAgent。在工作台上可以查看每轮代码差异、逐项测试结果，以及基线和候选实现在同一组输入上的耗时。</p>
+          <p>KitAgent 记录每轮算子修改，用相同输入检查输出是否正确，并比较修改前后的耗时。</p>
           <figure class="run-report">
             <a href="https://github.com/zed123214/kitagent/blob/main/docs/assets/equal-operator-overview.png"><img src="equal-report.png" width="800" height="360" loading="lazy" alt="查看完整工作台截图。报告列出等长输入和标量广播的基线耗时、优化后耗时及测量条件。"></a>
-            <figcaption>Equal 离线演示。模型响应由脚本驱动，工具在本地执行。Python CPU 原型通过 75 组正确性测试，表中比较三组输入的中位耗时。</figcaption>
+            <figcaption>Equal 离线演示使用脚本化模型响应，在本地运行 Python CPU 原型。75 组测试全部通过，表中给出三组输入的中位耗时。</figcaption>
           </figure>
-          <p>在 Graph + SQLite + Local 模式下，进程重启后会复用已记录的工具结果。上次执行结果未知的调用会暂停，避免重复执行。在单节点 kind + Cilium 离线验收中，20 个并发会话完成了 200 次跨会话读写探测，均未发现泄漏。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#demo">Equal 演示</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/durable-recovery.md">恢复设计</a><a href="https://github.com/zed123214/kitagent/blob/main/docs/kubernetes-sandbox.md">沙箱验收</a></div>
         </article>
         <article><h3>昇腾 CANN · Equal 算子</h3>
-          <p>用 Ascend C 实现逐元素比较，负责 Host 侧分块与 AICore 计算内核，支持 1–8 维广播。实现已合入 CANN 的 ops-math 仓库。</p>
+          <p>用 Ascend C 实现张量的逐元素相等比较，支持 1–8 维广播。代码已合入 CANN 的 ops-math 仓库。</p>
           <div class="links"><a href="https://gitcode.com/cann/ops-math/pull/5425">合入记录 · PR #5425</a></div>
         </article>
         <article><h3>SkillGrow · 财报抽取评测</h3>
-          <p>在字节跳动工程训练营开发。把抽取字段、原文证据和评分关联到同一用例，修改规则后在独立工作区回放失败样例和此前通过的样例。仓库提供 20 个合成回放用例。</p>
+          <p>财报里的金额可能抽对了，年份却配错了。SkillGrow 把抽取字段与原表逐项对照，修订规则后重测出错的样例，也检查原先通过的样例。</p>
           <div class="links"><a href="https://github.com/zed123214/SkillGrow">项目与演示</a><a href="https://github.com/zed123214/SkillGrow/tree/main/financial-pdf-skill-eval-framework/optimizer">候选补丁与回归评测</a></div>
         </article>
       </div>
@@ -101,25 +100,11 @@
       </div>
     </section>
 
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="label"><h2 id="experience-title">研发实习</h2></div>
-      <div class="entries compact">
-        <article>
-          <div class="degree"><h3>北京能源集团</h3><span>2026.05 – 2026.08</span></div>
-          <p>AI 研发实习。在财务问答系统中，用 100 组多轮会话比较上下文策略：历史摘要加近期消息，比拼接完整历史少用 35% 的回答阶段平均单轮输入 token。</p>
-        </article>
-        <article>
-          <div class="degree"><h3>中国汽车技术研究中心</h3><span>2025.11 – 2026.04</span></div>
-          <p>后端开发实习。为汽车技术文档实现混合检索，在 150 条标有证据的问答上做离线评测，调优后 Recall@5 从 54% 提高到 95% 以上。</p>
-        </article>
-      </div>
-    </section>
-
     <section class="section" id="awards" aria-labelledby="awards-title">
       <div class="label"><h2 id="awards-title">算子竞赛</h2></div>
       <div class="entries compact">
         <article><h3>中国电信「星辰杯」· 决赛 16 强，优秀奖</h3>
-          <p>我和队友优化稀疏注意力反向算子 SparseFlashAttentionGrad。五分片初稿中，处理行数较少的核承担了额外的梯度归约，反而最晚完成。我们据此重新分配归约任务。在昇腾 910B3 上与同轮连续 C1 基线配对测速，正序耗时从 280.17 降至 258.99 μs，反序从 275.31 降至 259.71 μs，分别降低 7.56% 和 5.67%。</p>
+          <p>优化 SparseFlashAttentionGrad 时，我们发现行数较少的核因承担额外的梯度归约，最晚完成计算。重新分配归约任务后，在昇腾 910B3 五分片实验中，相对同轮连续 C1 基线，正序和反序配对测速的耗时分别降低 7.56% 和 5.67%。</p>
           <div class="links"><a href="https://github.com/zed123214/kitagent#operator-demo">实现与测速记录</a></div>
         </article>
         <article><h3>2026 CANN 挑战赛 · 决赛三等奖</h3>
